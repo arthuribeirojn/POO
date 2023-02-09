@@ -13,70 +13,101 @@ public class ControleRemoto implements Controlador{
         this.tocando = false;
     }
 
-    public int getVolume() {
+    private int getVolume() {
         return volume;
     }
 
-    public void setVolume(int volume) {
+    private void setVolume(int volume) {
         this.volume = volume;
     }
 
-    public boolean isLigado() {
+    private boolean isLigado() {
         return ligado;
     }
 
-    public void setLigado(boolean l) {
+    private void setLigado(boolean l) {
         this.ligado = l;
     }
 
-    public boolean isTocando() {
+    private boolean isTocando() {
         return tocando;
     }
 
-    public void setTocando(boolean t) {
+    private void setTocando(boolean t) {
         this.tocando = t;
     }
 
     @Override
     public void ligar() {
+        this.setLigado(true);
     }
 
     @Override
     public void desligar() {
+        this.setLigado(false);
     }
 
-    @Override
-    public void abrirMenu() {
-    }
-
-    @Override
-    public void fecharMenu() {
-    }
+  
 
     @Override
     public void maisVolume() {
+        if(this.isLigado()){
+            this.setVolume(this.getVolume() + 5);
+        }        
     }
 
     @Override
     public void menosVolume() {
+        if(this.isLigado()){
+            this.setVolume(this.getVolume() - 5);
+        } 
     }
 
     @Override
     public void ligarMudo() {
+        if(this.isLigado() && this.getVolume() > 0){
+            this.setVolume(0);
+        }
     }
 
     @Override
     public void desligarMudo() {
+        if(this.isLigado() && this.getVolume()==0){
+            this.setVolume(50);
+        }
     }
 
     @Override
     public void play() {
+        if(this.isLigado() && !(this.isTocando())){
+           this.setTocando(true);
+        }
     }
 
     @Override
     public void pause() {
+        if(this.isLigado() && this.isTocando()){
+            this.setTocando(false);
+        }
     }
-      
+      @Override
+    public void abrirMenu() {
+        int i;
+        System.out.println("-----MENU-----");
+        System.out.println("Está ligado? " + this.isLigado());
+        System.out.println("Está tocando? " + this.isTocando());  
+        System.out.println("Volume: " + this.getVolume());
+        for(i=0 ;i <= this.getVolume(); i+=10 ) {
+            System.out.print("|");
+           
+        }  
+        System.out.println("");           
+    }
+
+    @Override
+    public void fecharMenu() {
+        System.out.println("Fechando Menu...");
+    }  
 
    
 }
