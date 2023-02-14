@@ -1,4 +1,4 @@
-package com.mycompany.aula09;
+package com.mycompany.projetolivraria;
 
 public class Livro implements Publicacao{
     private String titulo;
@@ -9,13 +9,15 @@ public class Livro implements Publicacao{
     private Pessoa leitor;
 
     public String detalhes() {
-    return "\n Livro{" + "titulo=" + titulo + "\n, autor=" + autor + "\n, totPaginas=" + totPaginas + ",\n pagAtual=" + pagAtual + ",\n aberto=" + aberto + ",\n leitor=" + leitor.getNome() +", Idade =" + leitor.getIdade() + '}';
-    }    
+    return "Livro{" + "\n titulo=" + titulo + ",\n autor=" + autor + ",\n totPaginas=" + totPaginas + ",\n aberto=" + aberto + ",\n Nome= " + leitor.getNome() + " Idade= " + leitor.getIdade()+ " Sexo=  " + leitor.getSexo()+ "}";
+    }
     
+
+
     public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
         this.titulo = titulo;
         this.autor = autor;
-        this.totPaginas = totPaginas;
+        this.totPaginas = totPaginas; 
         this.aberto = false;
         this.pagAtual = 0;
         this.leitor = leitor;
@@ -37,20 +39,12 @@ public class Livro implements Publicacao{
         this.autor = autor;
     }
 
-    public int getTotPaginas() {
+    public int getTotPaginas(int p) {
         return totPaginas;
     }
 
-    public void setTotPaginas(int totPaginas) {
-        this.totPaginas = totPaginas;
-    }
-
-    public int getPagAtual() {
-        return pagAtual;
-    }
-
-    public void setPagAtual(int pagAtual) {
-        this.pagAtual = pagAtual;
+    public void setTotPaginas(int p) {
+        this.totPaginas = p;
     }
 
     public boolean isAberto() {
@@ -69,34 +63,43 @@ public class Livro implements Publicacao{
         this.leitor = leitor;
     }
 
+    
     @Override
     public void abrir() {
-        this.aberto = true;
+        this.setAberto(true);        
     }
 
     @Override
     public void fechar() {
-        this.aberto = false;
+        this.setAberto(false);
     }
 
     @Override
     public void folhear(int p) {
         if(p> this.totPaginas){
             this.pagAtual = 0;
-        }
+        }else{
         this.pagAtual = p;
+        }
+    }
+        
+
+    @Override
+    public void avancarPagina(int p) {
+        if(pagAtual > totPaginas){
+            pagAtual = 0;
+        }
+        p = pagAtual++; 
         
     }
 
     @Override
-    public void avançarPag() {
-        this.pagAtual++;
+    public void voltarPagina(int p) {
+        if(pagAtual == 0){
+            System.out.println("Esta no inicio.");            
+        }
+        p = pagAtual--;
         
-    }
-
-    @Override
-    public void voltarPag() {
-        this.pagAtual--;
     }
     
 }
