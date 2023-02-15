@@ -1,14 +1,13 @@
-package com.mycompany.aula10;
+package com.mycompany.aula11;
 
-public class Pessoa  {
+public abstract class Pessoa {
     private String nome;
     private int idade;
     private String sexo;
-    
     public void fazerAniv(){
-        this.idade++;
-         
-    }
+        this.idade ++;
+
+}
 
     public String getNome() {
         return nome;
@@ -36,7 +35,7 @@ public class Pessoa  {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome= " + nome + ", idade= " + idade + ", sexo= " + sexo + '}';
+        return "Pessoa{" + "nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + '}';
     }
     
 }

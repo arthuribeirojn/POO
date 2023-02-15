@@ -1,10 +1,11 @@
-package com.mycompany.aula10;
+ package com.mycompany.aula10;
 
-public class Aluno children Pessoa{
+public class Aluno extends Pessoa{
     private int matr;
     private String curso;
     
     public void cancelarMatr(){
+        System.out.println("Matricula será cancelada!!");
         
         
     }

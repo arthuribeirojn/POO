@@ -1,10 +1,11 @@
 package com.mycompany.aula10;
 
-public class Funcionario estende Pessoa{
+public class Funcionario extends Pessoa {
     private String setor;
     private boolean trabalhando;
     
     public void mudarTrabalho(){
+        this.trabalhando = ! this.trabalhando;
         
     }
 
