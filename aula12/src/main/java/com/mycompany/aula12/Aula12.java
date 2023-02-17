@@ -1,18 +1,14 @@
 package com.mycompany.aula12;
 
 public class Aula12 {
-
-    public static void main(String[] args) {
-        
-        //Animal n = new Animal;
+    public static void main(String[] args) {        
         Mamifero m = new Mamifero();
         Canguru c = new Canguru();
         Cachorro k = new Cachorro();
         
         Reptil r = new Reptil();
         Cobra co = new Cobra();
-        Tartaruga t = new Tartaruga();
-        
+        Tartaruga t = new Tartaruga();        
         
         Peixe p = new Peixe();
         GoldFish g = new GoldFish();
@@ -44,6 +40,21 @@ public class Aula12 {
         k.emitirSom();
         System.out.println(k.toString());
         
+        co.setPeso(0.35f);
+        co.setIdade(1);
+        co.setMembros(0);
+        co.locomover();
+        co.alimentar();
+        co.emitirSom();        
+        System.out.println(co.toString());
+        
+        t.setPeso(25f);
+        t.setIdade(50);
+        t.setMembros(4);
+        t.locomover();
+        t.alimentar();
+        t.emitirSom();        
+        System.out.println(t.toString());
         
         p.setPeso(0.35f);
         p.setIdade(1);
@@ -53,6 +64,15 @@ public class Aula12 {
         p.emitirSom();
         p.soltarBolhas();
         System.out.println(p.toString());
+        
+        g.setPeso(0.40f);
+        g.setIdade(2);
+        g.setMembros(0);
+        g.locomover();
+        g.alimentar();
+        g.emitirSom();
+        g.soltarBolhas();
+        System.out.println(g.toString());
         
         a.setPeso(0.89f);
         a.setIdade(2);
