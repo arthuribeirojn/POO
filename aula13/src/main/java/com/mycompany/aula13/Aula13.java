@@ -3,7 +3,7 @@ package com.mycompany.aula13;
 public class Aula13 {
 
     public static void main(String[] args) {
-        Lobo c = new Lobo();
+       Cachorro c = new Cachorro();
         
         c.reagir("Olá");
         c.reagir("Vai apanhar");
