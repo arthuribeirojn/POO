@@ -2,12 +2,12 @@ package com.mycompany.aula14;
 
 public class  Gafanhoto extends Pessoa {
     private String login;
-    private int totAsssistido;
+    private int totAssistido;
 
     public Gafanhoto(String nome, int idade, String sexo, String login) {
         super(nome, idade, sexo);
         this.login = login;
-        this.totAsssistido = 0;
+        this.totAssistido = 0;
     }
 
    
@@ -20,12 +20,12 @@ public class  Gafanhoto extends Pessoa {
         this.login = login;
     }
 
-    public int getTotAsssistido() {
-        return totAsssistido;
+    public int getTotAssistido() {
+        return totAssistido;
     }
 
-    public void setTotAsssistido(int totAsssistido) {
-        this.totAsssistido = totAsssistido;
+    public void setTotAssistido(int totAssistido) {
+        this.totAssistido = totAssistido;
     }
     
    /* public void viuMaisUm(){
@@ -44,7 +44,7 @@ public class  Gafanhoto extends Pessoa {
 
     @Override
     public String toString() {
-        return "Gafanhoto{" + toString() + "login=" + login + ", totAsssistido=" + totAsssistido + '}';
+        return "Gafanhoto{\n" + super.toString() + "\nlogin=" + login + ", totAsssistido=" + totAssistido + '}';
     }
     
     

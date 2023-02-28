@@ -1,11 +1,11 @@
 package com.mycompany.aula14;
 
 public class Video implements AcoesVideo {
-    protected String titulo;
-    protected int avaliacao;
-    protected int views;
-    protected int curtidas;
-    protected boolean reproduzir;
+    private String titulo;
+    private int avaliacao;
+    private int views;
+    private int curtidas;
+    private boolean reproduzir;
 
     public Video(String titulo) {
         this.titulo = titulo;
@@ -13,10 +13,7 @@ public class Video implements AcoesVideo {
         this.views = 0;
         this.curtidas = 0;
         this.reproduzir = false; 
-    }
-    
-    
-
+    }      
     public String getTitulo() {
         return titulo;
     }
@@ -27,7 +24,9 @@ public class Video implements AcoesVideo {
         return avaliacao;
     }
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        int nova;
+        nova = (int) ((this.avaliacao + avaliacao) / this.views);
+        this.avaliacao = nova;
     }
     public int getViews() {
         return views;
@@ -49,12 +48,15 @@ public class Video implements AcoesVideo {
     }
     @Override
     public void play() {
+        this.reproduzir = true;
     }
     @Override
     public void pause() {
+        this.reproduzir = false;
     }
     @Override
     public void like() {
+        this.curtidas ++;
     } 
 
     @Override
